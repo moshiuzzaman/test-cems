@@ -1,0 +1,16 @@
+{
+"companyName": "CEMS",
+"productName": "Sourcing-Bangladesh",
+"productVersion": "0.1",
+"dataUrl": "CEMS-WEBGL_KF.data.unityweb",
+"wasmCodeUrl": "CEMS-WEBGL_KF.wasm.code.unityweb",
+"wasmFrameworkUrl": "CEMS-WEBGL_KF.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.29f1"
+}
