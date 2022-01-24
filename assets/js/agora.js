@@ -35,10 +35,11 @@ class agoraFuntionality {
     this.appId = appId;
     this.userName = name;
     this.rtmToken = await this.createAgoraRtmToken(uid);
+    let token = await this.createAgoraRtmToken(uid);
     this.rtmClient = AgoraRTM.createInstance(appId);
-    console.log("rtmtoken = " + this.rtmToken);
+    console.log("rtmtoken = " + token + "appId= " + appId + "uid = " + uid);
     await this.rtmClient
-      .login({ uid, token: this.rtmToken })
+      .login({ uid, token: token })
       .then(async () => {
         // let data=await getChatData(access_token,uid)
         this.peerMessageRecive();
