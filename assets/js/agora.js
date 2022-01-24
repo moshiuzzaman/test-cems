@@ -66,7 +66,7 @@ class agoraFuntionality {
   }
   async createAgoraRtmToken(userName) {
     try {
-      const response = await axios.get(`http://localhost:5000/token/?username=${userName}&channelName=${userName}`);
+      const response = await axios.get(`https://bs-agora-token.herokuapp.com/token/?username=${userName}&channelName=${userName}`);
       return await response.data.rtmToken;
     } catch (error) {
       console.error(error);
@@ -75,7 +75,7 @@ class agoraFuntionality {
   async createAgoraRtcToken(id) {
     this.callid = id;
     try {
-      const response = await axios.get(`http://localhost:5000/rtc-uid-token/?uid=${id}&channelName=${this.channelId}`);
+      const response = await axios.get(`https://bs-agora-token.herokuapp.com/rtc-uid-token/?uid=${id}&channelName=${this.channelId}`);
       return await response.data.token;
     } catch (error) {
       console.error(error);
