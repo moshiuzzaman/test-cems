@@ -207,7 +207,7 @@
   <script src="./assets/js/agora.js"></script>
   <script src="./assets/js/script.js"></script>
   <script src="./assets/js/Chatbox.js"></script>
-  <script src="Build/UnityLoader.js"></script>
+  <!-- <script src="Build/UnityLoader.js"></script> -->
   <script>
     var modal = document.getElementById("myModal");
 
@@ -261,27 +261,27 @@
       let appId = "32ce8b468e644fb6986400e62b7a6486";
       bsChatInit(email, password, appId);
     }
-
-    var gameInstance = UnityLoader.instantiate("gameContainer", "Build/CEMS-WEBGL_KF.json", {
-      onProgress: UnityProgress,
-    });
-    function UnityProgress(gameInstance, progress) {
-      if (!gameInstance.Module) {
-        return;
-      }
-      const loader = document.querySelector("#loader");
-      if (!gameInstance.progress) {
-        const progress = document.querySelector("#loader .progress");
-        progress.style.display = "block";
-        gameInstance.progress = progress.querySelector(".full");
-        loader.querySelector(".spinner").style.display = "none";
-      }
-      gameInstance.progress.style.transform = `scaleX(${progress})`;
-      if (progress === 1 && !gameInstance.removeTimeout) {
-        gameInstance.removeTimeout = setTimeout(function () {
-          loader.style.display = "none";
-        }, 2000);
-      }
-    }
+    ChatInit(1, 2, "user2@gmail.com", "123456");
+    // var gameInstance = UnityLoader.instantiate("gameContainer", "Build/CEMS-WEBGL_KF.json", {
+    //   onProgress: UnityProgress,
+    // });
+    // function UnityProgress(gameInstance, progress) {
+    //   if (!gameInstance.Module) {
+    //     return;
+    //   }
+    //   const loader = document.querySelector("#loader");
+    //   if (!gameInstance.progress) {
+    //     const progress = document.querySelector("#loader .progress");
+    //     progress.style.display = "block";
+    //     gameInstance.progress = progress.querySelector(".full");
+    //     loader.querySelector(".spinner").style.display = "none";
+    //   }
+    //   gameInstance.progress.style.transform = `scaleX(${progress})`;
+    //   if (progress === 1 && !gameInstance.removeTimeout) {
+    //     gameInstance.removeTimeout = setTimeout(function () {
+    //       loader.style.display = "none";
+    //     }, 2000);
+    //   }
+    // }
   </script>
 </html>
