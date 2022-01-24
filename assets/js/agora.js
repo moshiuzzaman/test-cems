@@ -36,7 +36,7 @@ class agoraFuntionality {
     this.userName = name;
     this.rtmToken = await this.createAgoraRtmToken(uid);
     let token = await this.createAgoraRtmToken(uid);
-    this.rtmClient = AgoraRTM.createInstance(appId);
+    this.rtmClient = await AgoraRTM.createInstance(appId);
     console.log("rtmtoken = " + token + "appId= " + appId + "uid = " + uid);
     await this.rtmClient
       .login({ uid, token: token })
@@ -65,8 +65,10 @@ class agoraFuntionality {
     this.login(uid.toString(), name, appId, access_token);
   }
   async createAgoraRtmToken(userName) {
+    console.log("first in createAgoraRtmToken");
     try {
       const response = await axios.get(`http://47.241.99.15:5000/token/?username=${userName}&channelName=${userName}`);
+      console.log("second in createAgoraRtmToken" + response);
       return await response.data.rtmToken;
     } catch (error) {
       console.error(error);
